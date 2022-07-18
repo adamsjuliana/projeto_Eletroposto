@@ -38,6 +38,7 @@ Dependências:
  - Spring Data JPA
  - MySQL Driver
  - Thymeleaf
+ - Validation
  
 Banco de Dados:
  - MySQL
