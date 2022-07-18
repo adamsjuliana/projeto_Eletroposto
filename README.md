@@ -21,15 +21,18 @@
 ### Requisitos não funcionais
 - O banco de dados deverá estar instalado em um servidor.
 - O sistema será em plataforma Web.
+  - Layout adaptado para PC e celular.
 
 ## Stack utilizada
-- Aplicação Web
-- Spring Boot
-- Spring Security
-- Spring Data JPA
-- MySQL
-- Thymeleaf
-- Responsivo
-- HTML
-- CSS
-- JS
+- Linguagem:
+  - JAVA
+- Frameworks:
+  - Spring Boot
+  - Spring Security
+  - Spring Data JPA
+- Banco de Dados:
+  - MySQL
+- Front:
+  - Thymeleaf
+  - HTML
+  - CSS
