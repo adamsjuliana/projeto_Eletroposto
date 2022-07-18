@@ -43,11 +43,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/", "/home", "/sobre", "/usuario/add", "/usuario/admin/**", "/agendar*").permitAll()
+				.antMatchers("/", "/home", "/sobre", "/usuario/add").permitAll()
+				
+				
+				.antMatchers("/agendamentos", "/usuario/admin/**").hasAnyAuthority("ADMIN")
+				
+		
+				.antMatchers("/acesso").hasAnyAuthority("USER")
+						
+				
 				.antMatchers("/css/**", "/images/**", "/js/**").permitAll()
-				.anyRequest().authenticated()
+				
+				.anyRequest().authenticated() // ("/agendar")
 				.and()
-				.exceptionHandling().accessDeniedPage("/acesso-negado")
+				.exceptionHandling().accessDeniedPage("/no")
 				.and()
 			.formLogin().successHandler(loginSucesso)
 				.loginPage("/login")

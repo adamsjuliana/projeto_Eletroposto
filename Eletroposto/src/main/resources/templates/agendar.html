@@ -19,24 +19,23 @@
     </ul>
     <ul class="ul2">
         <li><a class="item" href="/">Página Inicial</a></li>
-        <li><a class="item" href="/sobre">Sobre</a></li>
         <li><a class="item" href="/agendar">Agendar</a></li>
-		<li><a class="item" href="/agendamento/meus">Meus Agendamentos</a></li>
-        <li><a class="item" href="/agendamentos">Agendamentos</a></li>
-        <li><a class="item" href="/usuario/admin/all">Usuários</a></li>
+		<li sec:authorize="isAuthenticated()"><a class="item" href="/agendamento/meus">Meus Agendamentos</a></li>
+        <li sec:authorize="hasAuthority('ADMIN')"><a class="item rosa" href="/agendamentos">Agendamentos</a></li>
+        <li sec:authorize="hasAuthority('ADMIN')"><a class="item rosa" href="/usuario/admin/all">Usuários</a></li>
     </ul>
     <ul class="ul3">
-        <li sec:authorize="!isAuthenticated()"><a class="btn" href="/usuario/add">Registrar</a></li>
+        <li><a class="btn" href="/usuario/add">Registrar</a></li>
         <li sec:authorize="!isAuthenticated()"><a class="btn lgn" href="/login">Logar</a></li>
-        <li sec:authorize="isAuthenticated()"><a class="btn lgn" onclick="document.querySelector('#formLogout').submit()" href="#">Deslogar</a></li>
+        <li sec:authorize="isAuthenticated()"><a class="btn" onclick="document.querySelector('#formLogout').submit()" href="#">Deslogar</a></li>
     </ul>
 </nav>
 </header>
 	<main class="principal">
 		<div class="container">
 			<h1>Agendar</h1>
-			<table class="agendamentos meusagendamentos">
-				<thead>
+			<table class="agendar">
+							<thead>
 					<tr>
 						<th>Dia Hora</th>
 						<th></th>
@@ -49,11 +48,8 @@
 					<tr th:each="a : ${agendamento}">
 						<td th:text="${a.data}"></td>
 						<td>
-										
-						
-						
-						<a th:href="@{/agendamento/update/{id} (id=${a.id})}" th:data-confirm-agendamento="|Você gostaria de agendar para o dia ${a.data} horas? Esta ação não pode ser desfeita. |"
-                		onclick="if(!confirm(this.getAttribute('data-confirm-agendamento'))) return false"><span class="verde">Agendar</a></span></td>
+						<a th:href="@{/agendamento/update/{id} (id=${a.id})}" th:data-confirm-agendamento="|Você gostaria de agendar para o dia ${a.data} horas? |"
+                		onclick="if(!confirm(this.getAttribute('data-confirm-agendamento'))) return false"><span class="branco">Agendar</a></span></td>
 					</tr>
 
 				</tbody>
@@ -84,10 +80,8 @@
 				</ul>
 			</div>
 		</div>
-		<h2 class="cred">
-			© Juliana Pienis Adams | Academia Java - ATOS/UFN 2022 | Icones por <a
-				href="https://www.iconfinder.com/">IconFinder</a>.
-		</h2>
+    <h2 class="cred">© Juliana Pienis Adams | Academia Java - ATOS/UFN 2022 | Icones por <a href="https://www.iconfinder.com/">IconFinder</a>. | Imagem por <a href="https://www.linkedin.com/in/h%C3%A9ricles-eduardo-oliveira-farias-321432113/">Héricles Farias</a>.</h2>
+	<h2 sec:authorize="hasAuthority('ADMIN')" class="modoadmin branco">modo administrador ativo.</h2>
 	</footer>
 
 

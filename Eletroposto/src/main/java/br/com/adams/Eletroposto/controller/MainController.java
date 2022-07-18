@@ -5,13 +5,18 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
+
+import javax.validation.Valid;
+
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.adams.Eletroposto.model.Agendamento;
+import br.com.adams.Eletroposto.model.Usuario;
 import br.com.adams.Eletroposto.repository.AgendamentoRepository;
 import br.com.adams.Eletroposto.repository.UsuarioRepository;
 
@@ -34,10 +39,7 @@ public class MainController {
 	public String acessoNegado() {
 		   return "acesso-negado";
 		   }
-	@GetMapping("/sobre")
-	public String sobre() {
-		   return "sobre";
-		   }
+
 	@GetMapping("/agendar")
 	public String agendar (@ModelAttribute Agendamento agendamento, Model model) {
 		   DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
@@ -70,7 +72,10 @@ public class MainController {
 	}
 	
 	@GetMapping("/login")
-	public String login (){
+	public String login (@Valid Usuario usuario, BindingResult result){
+		if (result.hasErrors()) {
+			return "login";
+		}
 		return "login";
 	}
 	

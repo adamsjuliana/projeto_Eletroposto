@@ -76,8 +76,9 @@ public class UsuarioController {
 	}
 
 	@GetMapping("/admin/del/{id}")
-	public String delUsuario(@PathVariable("id") long id, Model model) {
+	public String delUsuario(@PathVariable("id") long id, Model model, RedirectAttributes attributes) {
 		usuarioRepository.deleteById(id);
+		attributes.addFlashAttribute("mensagem", "O usuário foi excluído com sucesso.");
 		return "redirect:/usuario/admin/all";
 	}
 
@@ -141,8 +142,8 @@ public class UsuarioController {
 				usr.setAtivo(usuario.isAtivo());
 				usuarioRepository.save(usr);
 	        }
-
 		}
+		attributes.addFlashAttribute("mensagem", "As autorizações do usuário foram atualizadas!");
 		return "redirect:/usuario/admin/all";
 
 	}
