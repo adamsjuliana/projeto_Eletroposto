@@ -6,6 +6,7 @@
 ### Problema a ser solucionado
 
 ### Objetivo do Projeto
+Evitar filas.
 
 ### Requisitos funcionais
 - Geral
@@ -24,15 +25,24 @@
   - Layout adaptado para PC e celular.
 
 ### Stack utilizada
-- Linguagem:
-  - JAVA
-- Frameworks:
-  - Spring Boot
-  - Spring Security
-  - Spring Data JPA
-- Banco de Dados:
-  - MySQL
-- Front:
-  - Thymeleaf
-  - HTML
-  - CSS
+
+Linguagem:
+ - JAVA
+ 
+Framework:
+ - Spring Boot
+
+Dependências:
+ - Spring Web
+ - Spring Security
+ - Spring Data JPA
+ - MySQL Driver
+ - Thymeleaf
+ 
+Banco de Dados:
+ - MySQL
+ 
+Front:
+ - Thymeleaf
+ - HTML
+ - CSS
