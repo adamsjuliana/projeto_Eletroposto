@@ -23,7 +23,7 @@
 - O sistema será em plataforma Web.
   - Layout adaptado para PC e celular.
 
-## Stack utilizada
+### Stack utilizada
 - Linguagem:
   - JAVA
 - Frameworks:
