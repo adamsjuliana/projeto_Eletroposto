@@ -87,3 +87,7 @@ Dê papel de administrador ao usuário criado colocando o comando a seguir no My
 ```
 
 Como o projeto tem a dependência Spring Boot DevTools, não precisa ser reiniciado.
+
+### Demonstração
+
+[![Watch the video][https://www.youtube.com/watch?v=JnxR4rF38tg]]
