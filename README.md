@@ -63,6 +63,18 @@ Descompacte
 
 Importe na IDE como projeto MAVEN
 
+Crie o banco de dados no MySQL
+
+```bash
+create database Eletroposto
+```
+
+Modifique o arquivo de acordo com suas configurações do Banco de dados, atualizando seu usuário e senha
+
+```bash
+Eletroposto/src/main/resources/application.properties
+```
+
 Inicie o servidor
 
 Registre um usuário
