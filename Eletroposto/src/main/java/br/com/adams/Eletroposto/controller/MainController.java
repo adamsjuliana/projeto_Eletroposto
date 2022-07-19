@@ -16,11 +16,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.adams.Eletroposto.model.Agendamento;
+import br.com.adams.Eletroposto.model.Papel;
 import br.com.adams.Eletroposto.model.Usuario;
 import br.com.adams.Eletroposto.repository.AgendamentoRepository;
+import br.com.adams.Eletroposto.repository.PapelRepository;
 import br.com.adams.Eletroposto.repository.UsuarioRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -30,6 +35,11 @@ public class MainController {
 	private AgendamentoRepository agendamentoRepository;
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	@Autowired
+	private BCryptPasswordEncoder criptografia;
+
+	@Autowired
+	private PapelRepository papelRepository;
 
 	@GetMapping
 	public String pagInicial() {

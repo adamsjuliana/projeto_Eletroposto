@@ -48,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				
 				.antMatchers("/agendamentos", "/usuario/admin/**").hasAnyAuthority("ADMIN")
 				
-		
+
 				.antMatchers("/acesso").hasAnyAuthority("USER")
 						
 				
@@ -75,6 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		BCryptPasswordEncoder criptografia = gerarCriptografia();
 		
 		auth.userDetailsService(detalheDoUsuario).passwordEncoder(criptografia);
+		
 	}
 
 }

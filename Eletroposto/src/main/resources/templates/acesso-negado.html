@@ -20,9 +20,9 @@
         <li><a class="subt" href="#">Seu eletroposto</a></li>
     </ul>
     <ul class="ul2">
-        <li><a class="item" href="/">Página Inicial</a></li>
-        <li><a class="item" href="/agendar">Agendar</a></li>
-		<li sec:authorize="isAuthenticated()"><a class="item" href="/agendamento/meus">Meus Agendamentos</a></li>
+        <li  sec:authorize="isAuthenticated()"><a class="item" href="/">Página Inicial</a></li>
+        <li sec:authorize="hasAuthority('USER')"><a class="item" href="/agendar">Agendar</a></li>
+		<li sec:authorize="hasAuthority('USER')"><a class="item" href="/agendamento/meus">Meus Agendamentos</a></li>
         <li sec:authorize="hasAuthority('ADMIN')"><a class="item rosa" href="/agendamentos">Agendamentos</a></li>
         <li sec:authorize="hasAuthority('ADMIN')"><a class="item rosa" href="/usuario/admin/all">Usuários</a></li>
     </ul>

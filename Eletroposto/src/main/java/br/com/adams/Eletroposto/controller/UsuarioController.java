@@ -61,8 +61,8 @@ public class UsuarioController {
 		
 		String senhaCript = criptografia.encode(usuario.getPassword());
 		usuario.setPassword(senhaCript);
-		
 		usuario.setAtivo(true);
+		
 		usuarioRepository.save(usuario);
 		attributes.addFlashAttribute("mensagem", "Registro efetuado com sucesso!!");
 		return "redirect:/login";
