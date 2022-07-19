@@ -82,32 +82,6 @@ public class UsuarioController {
 		return "redirect:/usuario/admin/all";
 	}
 
-	@GetMapping("/admin/edit/{id}")
-	public String editUsuario(@PathVariable("id") long id, Model model) {
-		Optional<Usuario> u = usuarioRepository.findById(id);
-		Usuario usuario = u.get();
-		model.addAttribute("usuario", usuario);
-		return "/auth/admin/admin-editar-usuarios";
-	}
-
-	@PostMapping("/admin/edit/{id}")
-	public String saveEditUsuario(@PathVariable("id") long id, @Valid Usuario usuario, BindingResult result,
-			RedirectAttributes attributes, Model model) {
-		if (result.hasErrors()) {
-			usuario.setId(id);
-			return "/auth/admin/admin-editar-usuarios";
-		}
-		Usuario usr = usuarioRepository.findByUsername(usuario.getUsername());
-		if (usr != null) {
-			model.addAttribute("usernameExiste", "Username já existente.");
-			return "/auth/admin/admin-editar-usuarios";
-		}
-		
-		usuarioRepository.save(usuario);
-		attributes.addFlashAttribute("mensagem", "Usuário alterado com sucesso!!");
-		return "redirect:/usuario/admin/all";
-	}
-
 	@GetMapping("/admin/editPapel/{id}")
 	public String editPapelUsuario(@PathVariable("id") long id, Model model) {
 		Optional<Usuario> u = usuarioRepository.findById(id);

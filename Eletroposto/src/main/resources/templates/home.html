@@ -28,7 +28,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
         <li sec:authorize="hasAuthority('ADMIN')"><a class="item rosa" href="/usuario/admin/all">Usuários</a></li>
     </ul>
     <ul class="ul3">
-        <li><a class="btn" href="/usuario/add">Registrar</a></li>
+        <li  sec:authorize="!isAuthenticated()"><a class="btn" href="/usuario/add">Registrar</a></li>
         <li sec:authorize="!isAuthenticated()"><a class="btn lgn" href="/login">Logar</a></li>
         <li sec:authorize="isAuthenticated()"><a class="btn" onclick="document.querySelector('#formLogout').submit()" href="#">Deslogar</a></li>
     </ul>
