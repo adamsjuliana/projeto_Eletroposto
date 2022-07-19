@@ -38,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		UsuarioService detalheDoUsuario = new UsuarioService(usuarioRepository);
 		return detalheDoUsuario;
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http

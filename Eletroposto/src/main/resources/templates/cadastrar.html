@@ -9,7 +9,8 @@
 <link rel="stylesheet" th:href="@{/css/style.css}" />
 <!-- SCRIPTS -->
 <script defer src="https://kit.fontawesome.com/0a84b03181.js" /></script>
-<!-- ICONE -->
+    <!-- ICONE -->
+    <link rel="shortcut icon" href="/images/icon.png" />
 <body>
 <header class="cabecalho">
 <nav class="menu">
@@ -37,8 +38,15 @@
 			<form class="form" th:action="@{/usuario/add}" th:object="${usuario}"
 				method="post">
 				<label for="nome">Nome: </label><input class="campo" id="nome"
-					type="text" th:field="*{nome}" /> <span class="aviso"
-					th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span> <label
+					type="text" th:field="*{nome}" /> 
+					
+					<span class="aviso"
+					th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span> 
+					
+					
+					
+					
+					<label
 					for="email">E-mail: </label><input class="campo" id="email"
 					type="text" th:field="*{email}" /> <span class="aviso"
 					th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
