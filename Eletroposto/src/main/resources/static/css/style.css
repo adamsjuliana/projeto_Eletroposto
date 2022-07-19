@@ -407,6 +407,19 @@ font-size:3rem;
     padding: 10px 10px;
    	border-radius: 0 50em 50em 0;
 }
+.centro {
+	text-align:right;
+}
+.centro .btn{
+    border-radius: 30em;
+    padding: 8px 20px;
+    border: 1px solid var(--cor-amarelo);
+    color: var(--cor-amarelo);
+}
+.centro .btn:hover{
+    background: var(--cor-amarelo);
+    color: var(--cor-fonte);
+}
    	
 /***********      AGENDAR      ***********/
 /**********  MEUS AGENDAMENTOS  **********/
@@ -512,6 +525,10 @@ font-size:3rem;
 	text-align:center;
 	margin: 0 2rem;
 }
+.centro {
+	text-align: center;
+	margin: 35px 0 0 0;
+	}
 /*************  PRINCIPAL   *************/
 /*************    RODAPE    *************/
 .endereco{

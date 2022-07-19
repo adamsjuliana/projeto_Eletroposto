@@ -58,10 +58,10 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
     <div class="links">
         <h1>Nos encontre também: </h1>
         <ul>
-        <li><a href="#"><img class="social-media" src="/images/instagram.png" alt="Instagram"></a></li>
-        <li><a href="#"><img class="social-media" src="/images/facebook.png" alt="Facebook"></a></li>
-        <li><a href="#"><img class="social-media" src="/images/linkedin.png" alt="Linkedin"></a></li>
-        <li><a href="#"><img class="social-media" src="/images/twitter.png" alt="Twitter"></a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/instagram.png" alt="Instagram"></a></li>
+        <li><a href="https://pt-br.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/facebook.png" alt="Facebook"></a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/linkedin.png" alt="Linkedin"></a></li>
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/twitter.png" alt="Twitter"></a></li>
         </ul>
     </div>
 </div>
@@ -69,6 +69,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 	<h2 sec:authorize="hasAuthority('ADMIN')" class="modoadmin branco">modo administrador ativo.</h2>
 </footer>
 
+<script src="https://kit.fontawesome.com/0a84b03181.js" crossorigin="anonymous"></script>
 <form class="invi" id="formLogout" th:action="@{/logout}" method="post"></form>
 </body>
 </html>

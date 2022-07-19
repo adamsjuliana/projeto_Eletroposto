@@ -20,14 +20,14 @@
         <li><a class="subt" href="#">Seu eletroposto</a></li>
     </ul>
     <ul class="ul2">
-        <li sec:authorize="isAuthenticated()"><a class="item" href="/">Página Inicial</a></li>
+        <li  sec:authorize="isAuthenticated()"><a class="item" href="/">Página Inicial</a></li>
         <li sec:authorize="hasAuthority('USER')"><a class="item" href="/agendar">Agendar</a></li>
 		<li sec:authorize="hasAuthority('USER')"><a class="item" href="/agendamento/meus">Meus Agendamentos</a></li>
         <li sec:authorize="hasAuthority('ADMIN')"><a class="item rosa" href="/agendamentos">Agendamentos</a></li>
         <li sec:authorize="hasAuthority('ADMIN')"><a class="item rosa" href="/usuario/admin/all">Usuários</a></li>
     </ul>
     <ul class="ul3">
-        <li><a class="btn" href="/usuario/add">Registrar</a></li>
+        <li  sec:authorize="!isAuthenticated()"><a class="btn" href="/usuario/add">Registrar</a></li>
         <li sec:authorize="!isAuthenticated()"><a class="btn lgn" href="/login">Logar</a></li>
         <li sec:authorize="isAuthenticated()"><a class="btn" onclick="document.querySelector('#formLogout').submit()" href="#">Deslogar</a></li>
     </ul>
@@ -68,27 +68,18 @@
     <div class="links">
         <h1>Nos encontre também: </h1>
         <ul>
-        <li><a href="#"><img class="social-media" src="/images/instagram.png" alt="Instagram"></a></li>
-        <li><a href="#"><img class="social-media" src="/images/facebook.png" alt="Facebook"></a></li>
-        <li><a href="#"><img class="social-media" src="/images/linkedin.png" alt="Linkedin"></a></li>
-        <li><a href="#"><img class="social-media" src="/images/twitter.png" alt="Twitter"></a></li>
+        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/instagram.png" alt="Instagram"></a></li>
+        <li><a href="https://pt-br.facebook.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/facebook.png" alt="Facebook"></a></li>
+        <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/linkedin.png" alt="Linkedin"></a></li>
+        <li><a href="https://twitter.com/" target="_blank" rel="noopener noreferrer"><img class="social-media" src="/images/twitter.png" alt="Twitter"></a></li>
         </ul>
     </div>
 </div>
-        <h2 class="cred">© Juliana Pienis Adams | Academia Java - ATOS/UFN 2022 | Icones por <a href="https://www.iconfinder.com/">IconFinder</a>. | Imagem por <a href="https://www.linkedin.com/in/h%C3%A9ricles-eduardo-oliveira-farias-321432113/">Héricles Farias</a>.</h2>
+    <h2 class="cred">© Juliana Pienis Adams | Academia Java - ATOS/UFN 2022 | Icones por <a href="https://www.iconfinder.com/">IconFinder</a>. | Imagem por <a href="https://www.linkedin.com/in/h%C3%A9ricles-eduardo-oliveira-farias-321432113/">Héricles Farias</a>.</h2>
 	<h2 sec:authorize="hasAuthority('ADMIN')" class="modoadmin branco">modo administrador ativo.</h2>
 </footer>
 
-
-
-
-
-
-
-
-
-
-</body>
 <script src="https://kit.fontawesome.com/0a84b03181.js" crossorigin="anonymous"></script>
 <form class="invi" id="formLogout" th:action="@{/logout}" method="post"></form>
+</body>
 </html>
