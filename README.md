@@ -28,6 +28,7 @@ Evitar filas.
 
 Linguagem:
  - JAVA
+ - SQL
  
 Framework:
  - Spring Boot
@@ -47,3 +48,29 @@ Front:
  - Thymeleaf
  - HTML
  - CSS
+ - JS
+
+ 
+### Rodando localmente
+
+Baixe o projeto
+
+```bash
+  https://github.com/adamsjuliana/AcademiaJavaAtos_Projeto.git
+```
+
+Descompacte
+
+Importe na IDE como projeto MAVEN
+
+Inicie o servidor
+
+Registre um usuário
+
+Dê papel de administrador ao usuário criado colocando o comando a seguir no MySQL
+
+```bash
+  insert into usuario_papel (usuario_id, papel_id) values (1,1)
+```
+
+Como o projeto tem a dependência Spring Boot DevTools, não precisa ser reiniciado.
