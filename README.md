@@ -4,9 +4,10 @@ Projeto final desenvolvido na Academia Java 2022, oferecido pela ATOS com parcer
 ## Modelo Descritivo
 
 ### Problema a ser solucionado
+Tempos longos de carregamento de carros elétricos.
 
 ### Objetivo do Projeto
-Evitar filas.
+Redução das filas de espera de carregamento.
 
 ### Requisitos funcionais
 - Geral
