@@ -113,7 +113,7 @@ public class UsuarioController {
 			if (usuarioOptional.isPresent()) {
 				Usuario usr = usuarioOptional.get();
 				usr.setPapeis(papeis); // relaciona papéis ao usuário
-				usr.setAtivo(usuario.isAtivo());
+				usr.setAtivo(true);
 				usuarioRepository.save(usr);
 	        }
 		}

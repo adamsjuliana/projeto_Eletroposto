@@ -55,7 +55,7 @@
                 <tr th:each="a : ${agendamento}">
                     <td th:text="${a.usuario_id}"></td>
                     <td th:text="${a.data}"></td>
-                    <td><a th:href="@{/agendamento/del/{id} (id=${a.id})}" th:data-confirm-cancelamento="|Você gostaria cancelar o agendamento do usuário ${a.usuario_id} do dia ${a.data} horas? |"
+                    <td><a th:href="@{/del/{id} (id=${a.id})}" th:data-confirm-cancelamento="|Você gostaria cancelar o agendamento do usuário ${a.usuario_id} do dia ${a.data} horas? |"
                 		onclick="if(!confirm(this.getAttribute('data-confirm-cancelamento'))) return false"><span class="branco">Cancelar</a></span></td>
                 </tr>
 

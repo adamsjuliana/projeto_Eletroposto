@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -79,6 +80,12 @@ public class MainController {
 		   List<Agendamento> listaAgendamento = agendamentoRepository.findAllAgendamentos(nowstr);
 		   model.addAttribute("agendamento", listaAgendamento);
 		   return "agendamentos";
+	}
+	@GetMapping("/del/{id}") /* DELETAR AGENDAMENTOS */
+	public String delAgendamentos(@PathVariable("id") Long id, RedirectAttributes attributes) {
+	agendamentoRepository.delAgendamento(null ,id);
+	attributes.addFlashAttribute("mensagem", "Agendamento deletado!!");
+	return "redirect:/agendamentos";
 	}
 	
 	@GetMapping("/login")

@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -44,7 +45,7 @@ public class Usuario {
 	public void setPapeis(List<Papel> papeis) {
 		this.papeis = papeis;
 	}
-	
+
 	public String getNome() {
 		return nome;
 	}
